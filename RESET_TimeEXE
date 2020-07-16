@@ -1,0 +1,38 @@
+#CLASS 0
+$CLASS = "Tools|Time"
+
+#AL Time_SetClock {
+$param=%number(%0)
+#IF (%number($param)) {
+  #VAR Time_Hour {$param} {} VAR
+  #VAR Time_Minute {0} {} VAR
+}
+Time_ShowTime
+#ALA Alarm_Time {*5} {
+  #ADD Time_Minute 1
+  #IF (@Time_Minute>=60) {#VAR Time_Minute {%number(0)} {} VAR;#ADD Time_Hour 1}
+  #IF (@Time_Hour=24) {#VAR Time_Hour {%number(0)} {} VAR}
+  #IF (%mod(@Time_Minute,5)=0) {Time_ShowTime "-Info"}
+} Tools|Time|Settings
+
+} $CLASS
+
+#AL Time_ShowTime {
+$param=%0
+$showhh=@Time_Hour
+$showmm=@Time_Minute
+#IF ($showmm<10) {$showmm=%concat("0",$showmm)}
+#IF ($showhh<10) {$showhh=%concat("0",$showhh)}
+$display=%concat("<< Mudtime: ",$showhh,":",$showmm," >>     << Mudtime: ",$showhh,":",$showmm," >>")
+#IF (%pos("-SysMsg",$param)) {
+$display = %concat("SysMsg ",$display)
+} {$display = %concat("#WIN Info ",$display)}
+//#ECHO $display
+#EXE {$display}
+
+} $CLASS
+
+#AL SHTI {Time_ShowTime "-SysMsg"
+} $CLASS
+
+#CLASS 0
