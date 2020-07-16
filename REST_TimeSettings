@@ -1,0 +1,21 @@
+#CLASS 0
+$CLASS = "Tools|Time"
+//#UNT "Alarm_Time"
+#TR Time_ClockEvents {({@Messages_Weather_Events})} {
+#SW (%1="A faint glow appears in the east.") {Time_SetClock 5
+} (%1="The sun has risen, and it is time to check out of the inn.") {
+  SysMsg Inn checkout, kickout in 5 mins!
+  #FORALL @ROOMS_Inns_ID {#VAR %concat("ROOMS_Inns_",%i) {} {} VAR}
+  Time_SetClock 6
+} (%1="The sun appears at the edge of the eastern sky.") {
+  SysMsg Inn checkout time!
+  #FORALL @ROOMS_Inns_ID {#VAR %concat("ROOMS_Inns_",%i) {} {} VAR}
+  Time_SetClock 6
+} (%1="The sun has risen and the day begins.") {Time_SetClock 7
+} (%1="The sun climbs into the highest part of the sky.") {Time_SetClock 12
+} (%1="The sun begins to pass towards the western sky.") {Time_SetClock 13
+} (%1="The sun sinks towards the western horizon.") {Time_SetClock 17
+} (%1="The sun sets beyond the western horizon.") {Time_SetClock 18
+} (%1="Twilight fades and the night begins.") {Time_SetClock 19}
+} $CLASS
+#CLASS 0
