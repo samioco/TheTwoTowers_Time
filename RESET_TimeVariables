@@ -1,0 +1,29 @@
+#CLASS 0
+#VAR Messages_Daytime {} {} VAR
+#ADDI Messages_Daytime "It is very early in the morning in Middle-earth."
+#ADDI Messages_Daytime "You guess the day will start soon in Middle-earth."
+#ADDI Messages_Daytime "It is mid morning in Middle-earth."
+#ADDI Messages_Daytime "It is noon in Middle-earth."
+#ADDI Messages_Daytime "It is afternoon in Middle-earth."
+#ADDI Messages_Daytime "It is late in the evening in Middle-earth."
+#ADDI Messages_Daytime "The night is still young in Middle-earth."
+#ADDI Messages_Daytime "It is night in Middle-earth."
+
+#VAR Messages_Weather_Events {} {} VAR
+#ADDI Messages_Weather_Events "A faint glow appears in the east."
+#ADDI Messages_Weather_Events "The sun has risen and the day begins."
+#ADDI Messages_Weather_Events "The sun has risen, and it is time to check out of the inn."
+#ADDI Messages_Weather_Events "The sun climbs into the highest part of the sky."
+#ADDI Messages_Weather_Events "The sun begins to pass towards the western sky."
+#ADDI Messages_Weather_Events "The sun sets beyond the western horizon."
+#ADDI Messages_Weather_Events "Twilight fades and the night begins."
+#ADDI Messages_Weather_Events "The sun appears at the edge of the eastern sky."
+#ADDI Messages_Weather_Events "The sun sinks towards the western horizon."
+
+#VAR Messages_Time {} {} VAR
+#FORALL @Messages_Daytime {#ADDI Messages_Time %i}
+#FORALL @Messages_Weather_Events {#ADDI Messages_Time %i}
+
+#VAR Time_Minute {} {} VAR
+#VAR Time_Hour {} {} VAR
+#CLASS 0
