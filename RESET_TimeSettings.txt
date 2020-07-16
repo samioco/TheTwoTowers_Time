@@ -1,4 +1,4 @@
-#CLASS 0
+//RESET_TimeSettings#CLASS 0#AL RESET_TimeSettings {#CLASS 0
 $CLASS = "Tools|Time"
 //#UNT "Alarm_Time"
 #TR Time_ClockEvents {({@Messages_Weather_Events})} {
@@ -18,4 +18,4 @@ $CLASS = "Tools|Time"
 } (%1="The sun sets beyond the western horizon.") {Time_SetClock 18
 } (%1="Twilight fades and the night begins.") {Time_SetClock 19}
 } $CLASS
-#CLASS 0
+#CLASS 0} _Time#CLASS 0

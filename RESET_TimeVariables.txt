@@ -1,4 +1,4 @@
-#CLASS 0
+//RESET_TimeVariables#CLASS 0#AL RESET_TimeVariables {#CLASS 0
 #VAR Messages_Daytime {} {} VAR
 #ADDI Messages_Daytime "It is very early in the morning in Middle-earth."
 #ADDI Messages_Daytime "You guess the day will start soon in Middle-earth."
@@ -26,4 +26,4 @@
 
 #VAR Time_Minute {} {} VAR
 #VAR Time_Hour {} {} VAR
-#CLASS 0
+#CLASS 0} _Time#CLASS 0

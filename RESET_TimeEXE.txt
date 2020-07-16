@@ -1,4 +1,4 @@
-#CLASS 0
+//RESET_TimeEXE#CLASS 0#AL RESET_TimeEXE {#CLASS 0
 $CLASS = "Tools|Time"
 
 #AL Time_SetClock {
@@ -36,3 +36,4 @@ $display = %concat("SysMsg ",$display)
 } $CLASS
 
 #CLASS 0
+} _Time#CLASS 0
